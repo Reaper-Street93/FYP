@@ -58,7 +58,7 @@ def main():
     sender = "sebastianbarclay0@gmail.com"
     recipient = "sebastianbarclay0@gmail.com"       
     subject = "Test Email"
-    message_text = "Hello, this is a test :))))"
+    message_text = "Hello, this is a test :)))"
     
     send_email(sender, recipient, subject, message_text)
 
