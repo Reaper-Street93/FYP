@@ -28,7 +28,7 @@ def get_credentials():
             token.write(creds.to_json())
     return creds
 
-def write_message(sender, to, subject, message_text):
+def create_message(sender, to, subject, message_text):
    
     message = MIMEText(message_text)
     message['to'] = to
@@ -57,8 +57,22 @@ def send_email(sender, recipient, subject, message_text):
 def main():
     sender = "sebastianbarclay0@gmail.com"
     recipient = "sebastianbarclay0@gmail.com"       
-    subject = "Test Email"
-    message_text = "Hello, this is a test :)))"
+    subject = "Dormancy Notice for Your Caxton Account"
+    message_text = """Dear John,
+
+We’ve noticed that you haven’t used your Caxton account for the past 9 months. Since your account holds a balance, we want to make you aware of our policy regarding dormant accounts.If your account remains inactive for 12 consecutive months, a dormancy fee of £2 per month will be charged starting from the 12th month of inactivity.To avoid these fees, simply complete any one of the following actions before 28/06/2025:
+
+Load your account – add funds to your Caxton account.
+
+Switch your balance – transfer your balance to another currency.
+
+Use your card for a payment – 
+make a purchase using your Caxton card.
+
+These small actions will ensure your account stays active and prevent dormancy fees from being applied.If you need any help or have questions, please don’t hesitate to contact us.
+
+Caxton
+"""
     
     send_email(sender, recipient, subject, message_text)
 
